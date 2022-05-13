@@ -1,0 +1,33 @@
+#!/bin/bash
+
+if [ "$1" == "--help" ] || [ "$1" == "-h" ]
+then
+  echo -e "dicode [-h] [error]
+A CLI dictionnary for Epitech's coding-style errors
+
+USAGE:
+\t-h --help\tDisplay this message
+\terror\t\tThe coding-style error searched. If not provided, all errors will be displayed."
+  exit
+fi
+
+BOLD="\033[1;39m"
+UNDERLINE="\033[4;39m"
+BGBLACK="\033[0;40m"
+REDBOLD="\033[1;31m"
+GREENBOLD="\033[1;32m"
+RESET="\033[0m\e[39m\e[49m"
+
+DICT=\
+"${UNDERLINE}O1 - CONTENTS OF THE DELIVERY FOLDER${RESET}¶   ${REDBOLD}✗${RESET} The delivery folder ${BOLD}should not${RESET} contain ${BOLD}compiled${RESET} (.o, .gch, .a, .so, ...), ${BOLD}temporary${RESET} or ${BOLD}unnecessary${RESET} files (*~, *#, *.d, toto, ...).
+${UNDERLINE}O2 - FILE EXTENSION${RESET}¶   ${GREENBOLD}✔${RESET} Sources in a C program should ${BOLD}only${RESET} have .c or .h extensions.
+${UNDERLINE}O3 - FILE COHERENCE${RESET}¶   ${REDBOLD}✗${RESET} A source file should match a ${BOLD}logical entity${RESET}, and group all the functions associated with that entity.Grouping functions that are ${BOLD}not related${RESET} to each other in the same file has to be ${BOLD}avoided${RESET}.¶¶   ${BGBLACK}> Beyond 5 functions in your file, you should probably subdivide your logical entity into several sub-entities.${RESET}
+"
+RES=$(echo "$DICT" | grep "$1 - " | sed 's/¶/\n/g')
+if [ -z "$RES" ]
+then
+  echo "No Related error found."
+  exit 1
+fi
+
+echo -e "$RES"
