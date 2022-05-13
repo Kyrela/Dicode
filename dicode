@@ -7,21 +7,35 @@ A CLI dictionnary for Epitech's coding-style errors
 
 USAGE:
 \t-h --help\tDisplay this message
-\terror\t\tThe coding-style error searched. If not provided, all errors will be displayed."
+\terror\t\tThe coding-style error or category searched. If not provided, the whole cosing-style documentation will be displayed."
   exit
 fi
 
-BOLD="\033[1;39m"
-UNDERLINE="\033[4;39m"
-BGBLACK="\033[0;40m"
-REDBOLD="\033[1;31m"
-GREENBOLD="\033[1;32m"
-RESET="\033[0m\e[39m\e[49m"
+# ANSI escape code: https://en.wikipedia.org/wiki/ANSI_escape_code
 
-DICT=\
-"${UNDERLINE}O1 - CONTENTS OF THE DELIVERY FOLDER${RESET}¶   ${REDBOLD}✗${RESET} The delivery folder ${BOLD}should not${RESET} contain ${BOLD}compiled${RESET} (.o, .gch, .a, .so, ...), ${BOLD}temporary${RESET} or ${BOLD}unnecessary${RESET} files (*~, *#, *.d, toto, ...).
-${UNDERLINE}O2 - FILE EXTENSION${RESET}¶   ${GREENBOLD}✔${RESET} Sources in a C program should ${BOLD}only${RESET} have .c or .h extensions.
-${UNDERLINE}O3 - FILE COHERENCE${RESET}¶   ${REDBOLD}✗${RESET} A source file should match a ${BOLD}logical entity${RESET}, and group all the functions associated with that entity.Grouping functions that are ${BOLD}not related${RESET} to each other in the same file has to be ${BOLD}avoided${RESET}.¶¶   ${BGBLACK}> Beyond 5 functions in your file, you should probably subdivide your logical entity into several sub-entities.${RESET}
+BOLD="\e[1m"
+NO_BOLD="\e[22m"
+UNDERLINE="\e[4m"
+NO_UNDERLINE="\e[24m"
+ITALIC="\e[3m"
+NO_ITALIC="\e[23m"
+FAINT="\e[2m"
+NO_FAINT="\e[22m"
+BG_BLACK="\e[40m"
+BG_DEFAULT="\e[49m"
+RED="\e[31m"
+GREEN="\e[32m"
+GREY="\e[37m"
+DEFAULT="\e[39m"
+
+DICT="
+¶${UNDERLINE}${BOLD}O - Files organization${NO_BOLD}${NO_UNDERLINE}¶${ITALIC}${FAINT}Rules O1..4${NO_FAINT}${NO_ITALIC}¶
+¶${UNDERLINE}O1 -  Contents of the delivery folder${NO_UNDERLINE}¶¶${RED}${BOLD}✗${NO_BOLD}${DEFAULT} The delivery folder ${BOLD}should not${NO_BOLD} contain ${BOLD}compiled${NO_BOLD} (${GREY}${ITALIC}.o${NO_ITALIC}${DEFAULT}, ${GREY}${ITALIC}.gch${NO_ITALIC}${DEFAULT}, ${GREY}${ITALIC}.a${NO_ITALIC}${DEFAULT}, ${GREY}${ITALIC}.so${NO_ITALIC}${DEFAULT}, ...), ${BOLD}temporary${NO_BOLD} or ${BOLD}unnecessary${NO_BOLD} files (${GREY}${ITALIC}*~${NO_ITALIC}${DEFAULT}, ${GREY}${ITALIC}*#${NO_ITALIC}${DEFAULT}, ${GREY}${ITALIC}*.d${NO_ITALIC}${DEFAULT}, ${GREY}${ITALIC}toto${NO_ITALIC}${DEFAULT}, ...).¶
+¶${UNDERLINE}O2 - File extension${NO_UNDERLINE}¶¶${GREEN}${BOLD}✔${NO_BOLD}${DEFAULT} Sources in a C program should ${BOLD}only${NO_BOLD} have ${GREY}${ITALIC}.c${NO_ITALIC}${DEFAULT} or ${GREY}${ITALIC}.h${NO_ITALIC}${DEFAULT} extensions.¶
+¶${UNDERLINE}O3 - File coherence${NO_UNDERLINE}¶¶${RED}${BOLD}✗${NO_BOLD}${DEFAULT} A source file should match a ${BOLD}logical entity${NO_BOLD}, and group all the functions associated with that entity.Grouping functions that are ${BOLD}not related${NO_BOLD} to each other in the same file has to be ${BOLD}avoided${NO_BOLD}.¶¶${BG_BLACK}> Beyond 5 functions in your file, you should probably subdivide your logical entity into several sub-entities.${BG_DEFAULT}¶
+¶${UNDERLINE}O4 - Naming files and folders${NO_UNDERLINE}¶¶${RED}${BOLD}✗${NO_BOLD}${DEFAULT} The name of the file should define the logical entity it represents, and thus be ${BOLD}clear, precise, explicit and unambiguous${NO_BOLD}.¶¶${BG_BLACK}> For example, the ${GREY}${ITALIC}string.c${NO_ITALIC}${DEFAULT} or ${GREY}${ITALIC}algo.c${NO_ITALIC}${DEFAULT} files are probably incorrectly named.${BG_DEFAULT}¶${BG_BLACK}  Names like ${GREY}${ITALIC}string_toolbox.c${NO_ITALIC}${DEFAULT} or ${GREY}${ITALIC}pathfinding.c${NO_ITALIC}${DEFAULT} would be more appropriate.${BG_DEFAULT}¶¶All file names and folders should be in English, according to the ${GREY}${ITALIC}snake_case${NO_ITALIC}${DEFAULT} convention (that is composed only of lowercase, numbers and underscores).¶¶${BG_BLACK}> Abbreviations are tolerated to the extent that they can significantly reduce the size of the name without losing the meaning.${BG_DEFAULT}¶
+¶${UNDERLINE}${BOLD}G -  Global scope${NO_BOLD}${UNDERLINE}¶
+¶${UNDERLINE}G1 -  File header${NO_UNDERLINE}¶¶${RED}${BOLD}✗${NO_BOLD}${DEFAULT} The source files (${GREY}${ITALIC}.c${NO_ITALIC}${DEFAULT}, ${GREY}${ITALIC}.h${NO_ITALIC}${DEFAULT}, ${GREY}${ITALIC}Makefile${NO_ITALIC}${DEFAULT}, ...) should always start with the ${BOLD}standard header${NO_BOLD} of the school.¶This header is created in Emcas using the ${GREY}${ITALIC}C-c C-h${NO_ITALIC}${DEFAULT} command.¶¶For C files:¶${GREEN}/*¶** EPITECH PROJECT, \$YEAR¶** \$NAME_OF_THE_PROJECT¶** File description:¶** No file there, just an epitech header example¶*/${DEFAULT}¶For Makefiles:¶${GREEN}##¶## EPITECH PROJECT, \$YEAR¶## \$NAME_OF_THE_PROJECT¶## File description:¶## No file there, just an epitech header example¶##${DEFAULT}¶
 "
 RES=$(echo "$DICT" | grep "$1 - " | sed 's/¶/\n/g')
 if [ -z "$RES" ]
