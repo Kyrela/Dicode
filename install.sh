@@ -13,6 +13,11 @@ USAGE:
   exit
 fi
 
+if [ "$EUID" -ne 0 ]
+  then echo "You have to run this script as root!"
+  exit
+fi
+
 if [ "$1" == "--remove" ] || [ "$1" == "-r" ]
 then
   echo "Removing Dicode..."
