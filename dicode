@@ -32,6 +32,70 @@ DICT="
 ${UNDERLINE}${BOLD}C CODING STYLE${NO_BOLD}${NO_UNDERLINE}
 ${ITALIC}Keep your code nice and clean${NO_ITALIC}
 
+
+The ${ITALIC}Epitech Coding Style${NO_ITALIC} is a set of rules, guidelines and programming conventions that has been created
+within the school, and that you have to respect.
+It applies to:
+• the organization of the delivery folder,
+• the denomination of the identifiers,
+• the overall presentation (paragraphs),
+• the local presentation (lines),
+• source files and headers,
+• Makefiles.
+
+${BG_BLACK}> The Coding Style is a purely syntactic convention, so it can not be used as an excuse if${BG_DEFAULT}
+${BG_BLACK}  your program does not work!                                                             ${BG_DEFAULT}
+
+It is compulsory on all programs written in C as part of Epitech projects, regardless of the year or unit.
+It applies to all source files (${GREY}${ITALIC}.c${NO_ITALIC}${DEFAULT}) and headers (${GREY}${ITALIC}.h${NO_ITALIC}${DEFAULT}), as well as Makefiles.
+
+${BG_BLACK}> Although the Coding Style is not required in all projects, this is not a reason for not always${BG_DEFAULT}
+${BG_BLACK}  sequencing and structuring your code!                                                         ${BG_DEFAULT}
+${BG_BLACK}  Most of the rules in this Coding Style apply to all languages, so it can be useful when       ${BG_DEFAULT}
+${BG_BLACK}  you’re doing projects in different languages.                                                 ${BG_DEFAULT}
+
+${BG_BLACK}> It’s easier and quicker to follow the guide style from the beginning of a project rather${BG_DEFAULT}
+${BG_BLACK}  than to adapt an existing code at the end.                                              ${BG_DEFAULT}
+
+
+The existence of this ${ITALIC}Coding Style${NO_ITALIC} is justified by the need to standardize the writing of programs within the
+school, in order to facilitate group work.
+It is also an excellent way to encourage structuring and clarity of the code and thus facilitate :
+• its reading,
+• its debugging,
+• its maintenance,
+• its internal logic,
+• its reuse,
+• writing tests,
+• adding new features . . .
+
+${BG_BLACK}> When you are facing a choice and you do not know what decision to make, always ask${BG_DEFAULT}
+${BG_BLACK}  yourself which one helps to make your code clearer, ergonomic and flexible.       ${BG_DEFAULT}
+
+However, if you provide a ${BOLD}complete, relevant, accurate justification with a long-term view${NO_BOLD} (cleanliness,
+legibility, code flexibility, optimization, etc.), you can infringe some of the ${ITALIC}Coding Style${NO_ITALIC} points.
+
+${BG_BLACK}> The relevance of this justification is left to the discretion of the proofreader, so it is${BG_DEFAULT}
+${BG_BLACK}  preferable to present a strong argumentation or to abstain.                               ${BG_DEFAULT}
+
+In case of uncertainty or ambiguity in the principles specified in this document refer to your local education
+manager.
+
+There are 3 levels of severity: ${BOLD}major ${RED}✗${DEFAULT}${NO_BOLD}, ${BOLD}minor ${GREEN}✔${DEFAULT}${NO_BOLD}, and ${BOLD}info ${GREY}ⓘ${DEFAULT}${NO_BOLD}.
+
+There are many and many ways to produce unclean code.
+Even though one cannot mention all of them in this document, they have to be respected.
+We call them ${BOLD}implicite rules${NO_BOLD} when not explicitly defined in this document.
+
+${BG_BLACK}> Implicit rules are considered as infos ${BOLD}${GREY}ⓘ${DEFAULT}${NO_BOLD}.${BG_DEFAULT}
+
+
+${BG_BLACK}> This document is inspired by the ${ITALIC}${GREY}Linux Kernel Coding Style (https://www.kernel.org/doc/html/v4.10/process/coding-style.html)${DEFAULT}${NO_ITALIC},${BG_DEFAULT}
+${BG_BLACK}  and is freely adapted from Robert C. Martin’s excellent book Clean Code.                                                     ${BG_DEFAULT}
+
+Some tools (such as ${ITALIC}${GREY}Editor Config (https://editorconfig.org/)${DEFAULT}${NO_ITALIC}) might simplify the task.
+
+
 ${UNDERLINE}${BOLD}O - Files organization${NO_BOLD}${NO_UNDERLINE}¶${ITALIC}${FAINT}Rules O1..4${NO_FAINT}${NO_ITALIC}
 
 ${UNDERLINE}O1 -  Contents of the delivery folder${NO_UNDERLINE}¶¶${RED}${BOLD}✗${NO_BOLD}${DEFAULT} The delivery folder ${BOLD}should not${NO_BOLD} contain ${BOLD}compiled${NO_BOLD} (${GREY}${ITALIC}.o${NO_ITALIC}${DEFAULT}, ${GREY}${ITALIC}.gch${NO_ITALIC}${DEFAULT}, ${GREY}${ITALIC}.a${NO_ITALIC}${DEFAULT}, ${GREY}${ITALIC}.so${NO_ITALIC}${DEFAULT}, ...), ${BOLD}temporary${NO_BOLD} or ${BOLD}unnecessary${NO_BOLD} files (${GREY}${ITALIC}*~${NO_ITALIC}${DEFAULT}, ${GREY}${ITALIC}*#${NO_ITALIC}${DEFAULT}, ${GREY}${ITALIC}*.d${NO_ITALIC}${DEFAULT}, ${GREY}${ITALIC}toto${NO_ITALIC}${DEFAULT}, ...).
@@ -40,7 +104,7 @@ ${UNDERLINE}O2 - File extension${NO_UNDERLINE}¶¶${GREEN}${BOLD}✔${NO_BOLD}${
 
 ${UNDERLINE}O3 - File coherence${NO_UNDERLINE}¶¶${RED}${BOLD}✗${NO_BOLD}${DEFAULT} A source file should match a ${BOLD}logical entity${NO_BOLD}, and group all the functions associated with that entity.Grouping functions that are ${BOLD}not related${NO_BOLD} to each other in the same file has to be ${BOLD}avoided${NO_BOLD}.¶¶${BG_BLACK}> Beyond 5 functions in your file, you should probably subdivide your logical entity into several sub-entities.${BG_DEFAULT}
 
-${UNDERLINE}O4 - Naming files and folders${NO_UNDERLINE}¶¶${RED}${BOLD}✗${NO_BOLD}${DEFAULT} The name of the file should define the logical entity it represents, and thus be ${BOLD}clear, precise, explicit and unambiguous${NO_BOLD}.¶¶${BG_BLACK}> For example, the ${GREY}${ITALIC}string.c${NO_ITALIC}${DEFAULT} or ${GREY}${ITALIC}algo.c${NO_ITALIC}${DEFAULT} files are probably incorrectly named.${BG_DEFAULT}¶${BG_BLACK}  Names like ${GREY}${ITALIC}string_toolbox.c${NO_ITALIC}${DEFAULT} or ${GREY}${ITALIC}pathfinding.c${NO_ITALIC}${DEFAULT} would be more appropriate.${BG_DEFAULT}¶¶All file names and folders should be in English, according to the ${GREY}${ITALIC}snake_case${NO_ITALIC}${DEFAULT} convention (that is composed only of lowercase, numbers and underscores).¶¶${BG_BLACK}> Abbreviations are tolerated to the extent that they can significantly reduce the size of the name without losing the meaning.${BG_DEFAULT}¶
+${UNDERLINE}O4 - Naming files and folders${NO_UNDERLINE}¶¶${RED}${BOLD}✗${NO_BOLD}${DEFAULT} The name of the file should define the logical entity it represents, and thus be ${BOLD}clear, precise, explicit and unambiguous${NO_BOLD}.¶¶${BG_BLACK}> For example, the ${GREY}${ITALIC}string.c${NO_ITALIC}${DEFAULT} or ${GREY}${ITALIC}algo.c${NO_ITALIC}${DEFAULT} files are probably incorrectly named.${BG_DEFAULT}¶${BG_BLACK}  Names like ${GREY}${ITALIC}string_toolbox.c${NO_ITALIC}${DEFAULT} or ${GREY}${ITALIC}pathfinding.c${NO_ITALIC}${DEFAULT} would be more appropriate.  ${BG_DEFAULT}¶¶All file names and folders should be in English, according to the ${GREY}${ITALIC}snake_case${NO_ITALIC}${DEFAULT} convention (that is composed only of lowercase, numbers and underscores).¶¶${BG_BLACK}> Abbreviations are tolerated to the extent that they can significantly reduce the size of the name without losing the meaning.${BG_DEFAULT}¶
 
 ${UNDERLINE}${BOLD}G -  Global scope${NO_BOLD}${UNDERLINE}
 
