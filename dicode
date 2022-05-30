@@ -44,7 +44,7 @@ ${UNDERLINE}O4 - Naming files and folders${NO_UNDERLINE}¶¶${RED}${BOLD}✗${NO
 
 ${UNDERLINE}${BOLD}G -  Global scope${NO_BOLD}${UNDERLINE}
 
-${UNDERLINE}G1 -  File header${NO_UNDERLINE}¶¶${RED}${BOLD}✗${NO_BOLD}${DEFAULT} The source files (${GREY}${ITALIC}.c${NO_ITALIC}${DEFAULT}, ${GREY}${ITALIC}.h${NO_ITALIC}${DEFAULT}, ${GREY}${ITALIC}Makefile${NO_ITALIC}${DEFAULT}, ...) should always start with the ${BOLD}standard header${NO_BOLD} of the school.¶This header is created in Emcas using the ${GREY}${ITALIC}C-c C-h${NO_ITALIC}${DEFAULT} command.¶¶For C files:¶${GREEN}/*¶** EPITECH PROJECT, \$YEAR¶** \$NAME_OF_THE_PROJECT¶** File description:¶** No file there, just an epitech header example¶*/${DEFAULT}¶For Makefiles:¶${GREEN}##¶## EPITECH PROJECT, \$YEAR¶## \$NAME_OF_THE_PROJECT¶## File description:¶## No file there, just an epitech header example¶##${DEFAULT}
+${UNDERLINE}G1 -  File header${NO_UNDERLINE}¶¶${RED}${BOLD}✗${NO_BOLD}${DEFAULT} The source files (${GREY}${ITALIC}.c${NO_ITALIC}${DEFAULT}, ${GREY}${ITALIC}.h${NO_ITALIC}${DEFAULT}, ${GREY}${ITALIC}Makefile${NO_ITALIC}${DEFAULT}, ...) should always start with the ${BOLD}standard header${NO_BOLD} of the school.¶This header is created in Emcas using the ${GREY}${ITALIC}C-c C-h${NO_ITALIC}${DEFAULT} command.¶¶For C files:¶${GREEN}/*¶${GREEN}** EPITECH PROJECT, \$YEAR¶${GREEN}** \$NAME_OF_THE_PROJECT¶${GREEN}** File description:¶${GREEN}** No file there, just an epitech header example¶${GREEN}*/${DEFAULT}¶For Makefiles:¶${GREEN}##¶${GREEN}## EPITECH PROJECT, \$YEAR¶${GREEN}## \$NAME_OF_THE_PROJECT¶${GREEN}## File description:¶${GREEN}## No file there, just an epitech header example¶${GREEN}##${DEFAULT}
 "
 
 if [ -z "$1" ]
