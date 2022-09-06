@@ -98,17 +98,21 @@ Some tools (such as ${ITALIC}${GREY}Editor Config (https://editorconfig.org/)${D
 
 ${UNDERLINE}${BOLD}O - Files organization${NO_BOLD}${NO_UNDERLINE}¶${ITALIC}${FAINT}Rules O1..4${NO_FAINT}${NO_ITALIC}
 
-${UNDERLINE}O1 -  Contents of the delivery folder${NO_UNDERLINE}¶¶${RED}${BOLD}✗${NO_BOLD}${DEFAULT} The delivery folder ${BOLD}should not${NO_BOLD} contain ${BOLD}compiled${NO_BOLD} (${GREY}${ITALIC}.o${NO_ITALIC}${DEFAULT}, ${GREY}${ITALIC}.gch${NO_ITALIC}${DEFAULT}, ${GREY}${ITALIC}.a${NO_ITALIC}${DEFAULT}, ${GREY}${ITALIC}.so${NO_ITALIC}${DEFAULT}, ...), ${BOLD}temporary${NO_BOLD} or ${BOLD}unnecessary${NO_BOLD} files (${GREY}${ITALIC}*~${NO_ITALIC}${DEFAULT}, ${GREY}${ITALIC}*#${NO_ITALIC}${DEFAULT}, ${GREY}${ITALIC}*.d${NO_ITALIC}${DEFAULT}, ${GREY}${ITALIC}toto${NO_ITALIC}${DEFAULT}, ...).
+${UNDERLINE}O1 - Contents of the delivery folder${NO_UNDERLINE}¶¶${RED}${BOLD}✗${NO_BOLD}${DEFAULT} The delivery folder ${BOLD}should not${NO_BOLD} contain ${BOLD}compiled${NO_BOLD} (${GREY}${ITALIC}.o${NO_ITALIC}${DEFAULT}, ${GREY}${ITALIC}.gch${NO_ITALIC}${DEFAULT}, ${GREY}${ITALIC}.a${NO_ITALIC}${DEFAULT}, ${GREY}${ITALIC}.so${NO_ITALIC}${DEFAULT}, ...), ${BOLD}temporary${NO_BOLD} or ${BOLD}unnecessary${NO_BOLD} files (${GREY}${ITALIC}*~${NO_ITALIC}${DEFAULT}, ${GREY}${ITALIC}*#${NO_ITALIC}${DEFAULT}, ${GREY}${ITALIC}*.d${NO_ITALIC}${DEFAULT}, ${GREY}${ITALIC}toto${NO_ITALIC}${DEFAULT}, ...).
 
 ${UNDERLINE}O2 - File extension${NO_UNDERLINE}¶¶${GREEN}${BOLD}✔${NO_BOLD}${DEFAULT} Sources in a C program should ${BOLD}only${NO_BOLD} have ${GREY}${ITALIC}.c${NO_ITALIC}${DEFAULT} or ${GREY}${ITALIC}.h${NO_ITALIC}${DEFAULT} extensions.
 
-${UNDERLINE}O3 - File coherence${NO_UNDERLINE}¶¶${RED}${BOLD}✗${NO_BOLD}${DEFAULT} A source file should match a ${BOLD}logical entity${NO_BOLD}, and group all the functions associated with that entity.Grouping functions that are ${BOLD}not related${NO_BOLD} to each other in the same file has to be ${BOLD}avoided${NO_BOLD}.¶¶${BG_BLACK}> Beyond 5 functions in your file, you should probably subdivide your logical entity into several sub-entities.${BG_DEFAULT}
+${UNDERLINE}O3 - File coherence${NO_UNDERLINE}¶¶${RED}${BOLD}✗${NO_BOLD}${DEFAULT} A source file should match a ${BOLD}logical entity${NO_BOLD}, and group all the functions associated with that entity. Grouping functions that are ${BOLD}not related${NO_BOLD} to each other in the same file has to be ${BOLD}avoided${NO_BOLD}.¶¶${BG_BLACK}> Beyond 5 functions in your file, you should probably subdivide your logical entity into several sub-entities.${BG_DEFAULT}
 
 ${UNDERLINE}O4 - Naming files and folders${NO_UNDERLINE}¶¶${RED}${BOLD}✗${NO_BOLD}${DEFAULT} The name of the file should define the logical entity it represents, and thus be ${BOLD}clear, precise, explicit and unambiguous${NO_BOLD}.¶¶${BG_BLACK}> For example, the ${GREY}${ITALIC}string.c${NO_ITALIC}${DEFAULT} or ${GREY}${ITALIC}algo.c${NO_ITALIC}${DEFAULT} files are probably incorrectly named.${BG_DEFAULT}¶${BG_BLACK}  Names like ${GREY}${ITALIC}string_toolbox.c${NO_ITALIC}${DEFAULT} or ${GREY}${ITALIC}pathfinding.c${NO_ITALIC}${DEFAULT} would be more appropriate.  ${BG_DEFAULT}¶¶All file names and folders should be in English, according to the ${GREY}${ITALIC}snake_case${NO_ITALIC}${DEFAULT} convention (that is composed only of lowercase, numbers and underscores).¶¶${BG_BLACK}> Abbreviations are tolerated to the extent that they can significantly reduce the size of the name without losing the meaning.${BG_DEFAULT}¶
 
-${UNDERLINE}${BOLD}G -  Global scope${NO_BOLD}${UNDERLINE}
+${UNDERLINE}${BOLD}G - Global scope${NO_BOLD}${UNDERLINE}
 
-${UNDERLINE}G1 -  File header${NO_UNDERLINE}¶¶${RED}${BOLD}✗${NO_BOLD}${DEFAULT} The source files (${GREY}${ITALIC}.c${NO_ITALIC}${DEFAULT}, ${GREY}${ITALIC}.h${NO_ITALIC}${DEFAULT}, ${GREY}${ITALIC}Makefile${NO_ITALIC}${DEFAULT}, ...) should always start with the ${BOLD}standard header${NO_BOLD} of the school.¶This header is created in Emcas using the ${GREY}${ITALIC}C-c C-h${NO_ITALIC}${DEFAULT} command.¶¶For C files:¶${GREEN}/*¶${GREEN}** EPITECH PROJECT, \$YEAR¶${GREEN}** \$NAME_OF_THE_PROJECT¶${GREEN}** File description:¶${GREEN}** No file there, just an epitech header example¶${GREEN}*/${DEFAULT}¶For Makefiles:¶${GREEN}##¶${GREEN}## EPITECH PROJECT, \$YEAR¶${GREEN}## \$NAME_OF_THE_PROJECT¶${GREEN}## File description:¶${GREEN}## No file there, just an epitech header example¶${GREEN}##${DEFAULT}
+${UNDERLINE}G1 - File header${NO_UNDERLINE}¶¶${RED}${BOLD}✗${NO_BOLD}${DEFAULT} The source files (${GREY}${ITALIC}.c${NO_ITALIC}${DEFAULT}, ${GREY}${ITALIC}.h${NO_ITALIC}${DEFAULT}, ${GREY}${ITALIC}Makefile${NO_ITALIC}${DEFAULT}, ...) should always start with the ${BOLD}standard header${NO_BOLD} of the school.¶This header is created in Emacs using the ${GREY}${ITALIC}C-c C-h${NO_ITALIC}${DEFAULT} command.¶¶For C files:¶${GREEN}/*¶${GREEN}** EPITECH PROJECT, \$YEAR¶${GREEN}** \$NAME_OF_THE_PROJECT¶${GREEN}** File description:¶${GREEN}** No file there, just an epitech header example¶${GREEN}*/${DEFAULT}¶For Makefiles:¶${GREEN}##¶${GREEN}## EPITECH PROJECT, \$YEAR¶${GREEN}## \$NAME_OF_THE_PROJECT¶${GREEN}## File description:¶${GREEN}## No file there, just an epitech header example¶${GREEN}##${DEFAULT}
+
+${UNDERLINE}G2 - Separation of functions${NO_UNDERLINE}¶¶${GREEN}${BOLD}✔${NO_BOLD}${DEFAULT} Inside a source file, ${BOLD}one and only one empty line${NO_BOLD} should separate the implementation of functions.
+
+${UNDERLINE}G3 - Indentation of preprocessor directives${NO_UNDERLINE}¶¶${GREEN}${BOLD}✔${NO_BOLD}${DEFAULT} The preprocessor directives should be ${BOLD}indented according to the level of indirection${NO_BOLD}.¶¶${BG_BLACK}> Indentation must be done in the same way as in the L2 rule (groups of 4 spaces, no tabulations).¶${BG_BLACK}  ${BOLD}However${NO_BOLD}, preprocessor directives must be indented independently of all the other code.${BG_DEFAULT}¶¶${GREEN}# ifndef WIN32¶${GREEN}    # if defined ( __i386__ ) || defined ( __x86_64__ )¶${GREEN}const size_t PAGE_SIZE = 4096;¶${GREEN}    # else¶${GREEN}        # error \"Unknown architecture\"¶${GREEN}    # endif¶${GREEN}struct coords {¶${GREEN}    int x ;¶${GREEN}    int y ;¶${GREEN}};¶${GREEN}# endif${DEFAULT}
 "
 
 if [ -z "$1" ]
@@ -120,7 +124,7 @@ fi
 RES=$(echo "$DICT" | grep "$1 - " | sed 's/¶/\n/g')
 if [ -z "$RES" ]
 then
-  echo "No Related error found."
+  echo "No related code style rule found."
   exit 1
 fi
 
